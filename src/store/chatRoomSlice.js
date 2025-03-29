@@ -15,7 +15,7 @@ const initialState = {//채팅방 설정
 }
 
 
-export const chatRoomReducer = createSlice({
+export const chatRoomSlice = createSlice({
     name: 'chatRoom',
     initialState,
     reducers: {
@@ -31,6 +31,6 @@ export const chatRoomReducer = createSlice({
     }
 })
 
-export const { setCurrentChatRoom, setPrivateChatRoom, setUserPosts } = userSlice.actions;
+export const { setCurrentChatRoom, setPrivateChatRoom, setUserPosts } = chatRoomSlice.actions;
 
-export default userSlice.reducer;
+export default chatRoomSlice.reducer;
