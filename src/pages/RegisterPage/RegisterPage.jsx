@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react'
-import { Link } from 'react-router-dom';
-import { useForm } from 'react-hook-form';
+import { Link ,useNavigate } from 'react-router-dom';
+import { useForm } from 'react-hook-form'; //유효성 체크
 import md5 from 'md5';
 import { ref, set } from "firebase/database";
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
@@ -14,24 +14,23 @@ function RegisterPage() {
     const [errorFromSubmit, setErrorFromSubmit] = useState("")
     const [loading, setLoading] = useState(false);
     const auth = getAuth(app);
-
+    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const password = useRef();
     password.current = watch("password");
 
     const onSubmit = async (data) => {
-
         try {
             setLoading(true)
 
             const createdUser = 
             await createUserWithEmailAndPassword(auth, 
-                data.email, data.password)
+                data.email, data.password) //유저생성 firebase 제공 함수 ,firebase>Authentication 에 등록 사용
 
             await updateProfile(auth.currentUser, {
                 displayName: data.name,
-                photoURL: `http://gravatar.com/avatar/${md5(
+                photoURL: `http://gravatar.com/avatar/${md5( //무료프로필
                     createdUser.user.email)}?d=identicon`
             })
 
@@ -42,13 +41,14 @@ function RegisterPage() {
             }
             dispatch(setUser(userData));
 
-            //Firebase 데이터베이스에 저장해주기 
+            //Firebase>Realtime Database 에 저장해주기 현재 테스트모드 임
             set(ref(db, `users/${createdUser.user.uid}`), {
                 name: createdUser.user.displayName,
                 image: createdUser.user.photoURL
             })
 
             setLoading(false)
+            navigate("/login"); //성공 페이지 이동
         } catch (error) {
             setErrorFromSubmit(error.message)
             setLoading(false)
@@ -61,14 +61,14 @@ function RegisterPage() {
     return (
         <div className="auth-wrapper">
             <div style={{ textAlign: 'center' }}>
-                <h3>Register</h3>
+                <h3>회원가입</h3>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Email</label>
                 <input
                     name="email"
                     type="email"
-                    {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
+                    {...register("email", { required: true, pattern: /^\S+@\S+$/i })} //필수
                 />
                 {errors.email && <p>This email field is required</p>}
 
@@ -106,7 +106,7 @@ function RegisterPage() {
                     <p>{errorFromSubmit}</p>
                 }
 
-                <input type="submit" disabled={loading} />
+                <input type="submit" disabled={loading} value="Send Request"/>
                 <Link style={{ color: 'gray', textDecoration: 'none' }} to="/login">이미 아이디가 있다면...  </Link>
             </form>
 

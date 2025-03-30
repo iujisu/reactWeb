@@ -1,5 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
+import { getDatabase } from 'firebase/database';
 //import { getAnalytics } from "firebase/analytics";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -9,6 +10,7 @@ import { initializeApp } from "firebase/app";
 const firebaseConfig = {
   apiKey: "AIzaSyCG30mOSjbl5Fbb7SgmxA9UFqffMqGNyfQ",
   authDomain: "react-chat-app-a24dc.firebaseapp.com",
+  databaseURL: "https://react-chat-app-a24dc-default-rtdb.asia-southeast1.firebasedatabase.app", //Realtime Database 추가
   projectId: "react-chat-app-a24dc",
   storageBucket: "react-chat-app-a24dc.firebasestorage.app",
   messagingSenderId: "118156266900",
@@ -21,3 +23,5 @@ const app = initializeApp(firebaseConfig);
 //const analytics = getAnalytics(app);
 
 export default app;
+
+export const db = getDatabase(app);
