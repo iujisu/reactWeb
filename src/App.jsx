@@ -10,7 +10,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { clearUser, setUser } from "./store/userSlice";
 import app from "./firebase";
-import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
   const navigate = useNavigate();
