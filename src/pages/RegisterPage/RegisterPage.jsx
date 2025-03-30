@@ -14,7 +14,6 @@ function RegisterPage() {
     const [errorFromSubmit, setErrorFromSubmit] = useState("")
     const [loading, setLoading] = useState(false);
     const auth = getAuth(app);
-    const navigate = useNavigate();
     const dispatch = useDispatch();
 
     const password = useRef();
@@ -48,7 +47,6 @@ function RegisterPage() {
             })
 
             setLoading(false)
-            navigate("/login"); //성공 페이지 이동
         } catch (error) {
             setErrorFromSubmit(error.message)
             setLoading(false)

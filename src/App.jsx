@@ -25,7 +25,7 @@ function App() {
           displayName: user.displayName,
           photoURL: user.photoURL
         }
-        dispatch(setUser(userData));
+        dispatch(setUser(userData)); //유저정보 저장
       } else {
         navigate("/login");
         dispatch(clearUser());

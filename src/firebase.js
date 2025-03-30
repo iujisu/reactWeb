@@ -8,14 +8,13 @@ import { getDatabase } from 'firebase/database';
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyCG30mOSjbl5Fbb7SgmxA9UFqffMqGNyfQ",
-  authDomain: "react-chat-app-a24dc.firebaseapp.com",
-  databaseURL: "https://react-chat-app-a24dc-default-rtdb.asia-southeast1.firebasedatabase.app", //Realtime Database 추가
-  projectId: "react-chat-app-a24dc",
-  storageBucket: "react-chat-app-a24dc.firebasestorage.app",
-  messagingSenderId: "118156266900",
-  appId: "1:118156266900:web:ccb47aac2cb7916d90d381",
-  measurementId: "G-W20DSY89EX"
+  apiKey: "AIzaSyCj7y1uuwK1ZR2HxqDbo-vmxJkqsPQnGv8",
+  authDomain: "joinme-9d50d.firebaseapp.com",
+  databaseURL: "https://joinme-9d50d-default-rtdb.asia-southeast1.firebasedatabase.app", //Realtime Database 추가
+  projectId: "joinme-9d50d",
+  storageBucket: "joinme-9d50d.firebasestorage.app",
+  messagingSenderId: "524683759605",
+  appId: "1:524683759605:web:00369637d6ebd413c01abc"
 };
 
 // Initialize Firebase
