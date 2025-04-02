@@ -27,11 +27,11 @@ const ChatRooms = () => {
     useEffect(() => { //React component가 렌더링 될 때마다
         AddChatRoomsListeners();
         return () => {
-            off(chatRoomsRef);
+            off(chatRoomsRef);//clean up event listener 이벤트 제거
         }
     }, [])
 
-    const setFirstChatRoom = (chatRooms) => {
+    const setFirstChatRoom = (chatRooms) => {//상위 체팅방 지정
         const firstChatRoom = chatRooms[0];
         if (firstLoad && chatRooms.length > 0) {
             dispatch(setCurrentChatRoom(firstChatRoom));

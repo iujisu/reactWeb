@@ -68,15 +68,15 @@ function RegisterPage() {
                     type="email"
                     {...register("email", { required: true, pattern: /^\S+@\S+$/i })} //필수
                 />
-                {errors.email && <p>This email field is required</p>}
+                {errors.email && <p style={{ color: 'red' }} >This email field is required</p>}
 
                 <label>Name</label>
                 <input
                     name="name"
                     {...register("name", { required: true, maxLength: 10 })}
                 />
-                {errors.name && errors.name.type === "required" && <p>This name field is required</p>}
-                {errors.name && errors.name.type === "maxLength" && <p>Your input exceed maximum length</p>}
+                {errors.name && errors.name.type === "required" && <p style={{ color: 'red' }} >This name field is required</p>}
+                {errors.name && errors.name.type === "maxLength" && <p style={{ color: 'red' }} >Your input exceed maximum length</p>}
 
                 <label>Password</label>
                 <input
@@ -84,8 +84,8 @@ function RegisterPage() {
                     type="password"
                     {...register("password", { required: true, minLength: 6 })}
                 />
-                {errors.password && errors.password.type === "required" && <p>This password field is required</p>}
-                {errors.password && errors.password.type === "minLength" && <p>Password must have at least 6 characters</p>}
+                {errors.password && errors.password.type === "required" && <p style={{ color: 'red' }} >This password field is required</p>}
+                {errors.password && errors.password.type === "minLength" && <p style={{ color: 'red' }} >Password must have at least 6 characters</p>}
 
                 <label>Password Confirm</label>
                 <input
@@ -97,11 +97,11 @@ function RegisterPage() {
                             value === password.current
                     })}
                 />
-                {errors.password_confirm && errors.password_confirm.type === "required" && <p>This password confirm field is required</p>}
-                {errors.password_confirm && errors.password_confirm.type === "validate" && <p>The passwords do not match</p>}
+                {errors.password_confirm && errors.password_confirm.type === "required" && <p style={{ color: 'red' }} >This password confirm field is required</p>}
+                {errors.password_confirm && errors.password_confirm.type === "validate" && <p style={{ color: 'red' }} >The passwords do not match</p>}
 
                 {errorFromSubmit &&
-                    <p>{errorFromSubmit}</p>
+                    <p style={{ color: 'red' }} >{errorFromSubmit}</p>
                 }
 
                 <input type="submit" disabled={loading} value="Send Request"/>
