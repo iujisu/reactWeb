@@ -4,15 +4,15 @@ import Message from './Message';
 import MessageForm from './MessageForm';
 import { useDispatch, useSelector } from 'react-redux';
 import Skeleton from '../../../components/Skeleton';
-import { ref, onChildAdded, onChildRemoved, child, off } from "firebase/database";
+import { ref as dbRef, onChildAdded, onChildRemoved, child, off } from "firebase/database";
 import { db } from '../../../firebase';
 import { setUserPosts } from '../../../store/chatRoomSlice';
 
 const MainPanel = () => {
 
     const messageEndRef = useRef(null);
-    const messagesRef = ref(db, "messages")
-    const typingRef = ref(db, "typing");
+    const messagesRef = dbRef(db, "messages")
+    const typingRef = dbRef(db, "typing");
 
     const [messages, setMessages] = useState([]);
     const [messagesLoading, setMessagesLoading] = useState(true);
@@ -44,7 +44,7 @@ const MainPanel = () => {
 
     const removeListeners = (listeners) => {
         listeners.forEach(listener => {
-            off(ref(db, `messages/${listener.id}`), listener.event);
+            off(dbRef(db, `messages/${listener.id}`), listener.event);
         })
     }
 

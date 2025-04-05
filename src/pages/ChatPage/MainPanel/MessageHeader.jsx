@@ -94,9 +94,9 @@ function MessageHeader({ handleSearchChange }) {
                             :
                             <FaLockOpen style={{ marginBottom: '10px' }} />
                         }
-                        {" "}
+                        &nbsp;
                         {currentChatRoom && <span>{currentChatRoom.name}</span>}
-                        {" "}
+                        &nbsp;
                         {!isPrivateChatRoom &&
                             <span style={{ cursor: 'pointer' }} onClick={handleFavorite}>
                                 {isFavorite ?
@@ -130,7 +130,7 @@ function MessageHeader({ handleSearchChange }) {
                         src={currentChatRoom?.createdBy.image}
                         style={{ width: '30px', height: '30px', marginRight: 7 }}
                         roundedCircle
-                    />{" "}
+                    />&nbsp;
                     <p>{currentChatRoom?.createdBy.name}</p>
                 </div>
             }

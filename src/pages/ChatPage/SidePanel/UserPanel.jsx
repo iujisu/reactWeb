@@ -97,7 +97,7 @@ function UserPanel() {
         <div>
             {/* Logo */}
             <h3 style={{ color: 'white' }}>
-                <IoIosChatboxes />{" "} Chat App
+                <IoIosChatboxes />&nbsp;Chat App
             </h3>
 
             {/* User Dropdown */}
