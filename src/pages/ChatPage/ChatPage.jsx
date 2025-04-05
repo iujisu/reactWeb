@@ -5,15 +5,17 @@
 import React from 'react'
 import SidePanel from './SidePanel/SidePanel';
 import MainPanel from './MainPanel/MainPanel';
+import TopPanel from '../TopPanel/TopPanel';
 
 function ChatPage() {
     return (
-        <div style={{ display: 'flex' }}>
-            <div style={{ width: '300px' }}>
-                <SidePanel />
-            </div>
-            <div style={{ width: '100%' }}>
-                <MainPanel />
+        <div class="wrap">
+            <div class="header">
+                <TopPanel />
+            </div> 
+            <div class="content">
+                <div class="aside"> <SidePanel /></div>
+                <div class="main"><MainPanel /></div>
             </div>
         </div>
     )
