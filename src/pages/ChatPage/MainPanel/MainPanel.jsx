@@ -16,9 +16,9 @@ const MainPanel = () => {
 
     const [messages, setMessages] = useState([]);
     const [messagesLoading, setMessagesLoading] = useState(true);
-    const [searchTerm, setSearchTerm] = useState("");
-    const [searchResults, setSearchResults] = useState([]);
-    const [searchLoading, setSearchLoading] = useState(false);
+    const [searchTerm, setSearchTerm] = useState(""); //메시지검색
+    const [searchResults, setSearchResults] = useState([]);//메시지검색
+    const [searchLoading, setSearchLoading] = useState(false);//메시지검색
     const [typingUsers, setTypingUsers] = useState([]);
     const [listenerLists, setListenerLists] = useState([]);
 
@@ -97,7 +97,7 @@ const MainPanel = () => {
 
     const handleSearchMessages = (searchTerm) => {
         const chatRoomMessages = [...messages];
-        const regex = new RegExp(searchTerm, "gi");
+        const regex = new RegExp(searchTerm, "gi");//gi 글로벌, 모든 메시지 검색
         const searchResults = chatRoomMessages.reduce((acc, message) => {
             if (
                 (message.content && message.content.match(regex)) ||
@@ -112,7 +112,7 @@ const MainPanel = () => {
     }
 
     const handleSearchChange = event => {
-        setSearchTerm(event.target.value);
+        setSearchTerm(event.target.value); //검색어
         setSearchLoading(true);
 
         handleSearchMessages(event.target.value);
