@@ -34,6 +34,8 @@ function MessageHeader({ handleSearchChange }) {
                 const chatRoomIds = Object.keys(data.val());
                 const isAlreadyFavorite = chatRoomIds.includes(chatRoomId)
                 setIsFavorite(isAlreadyFavorite)
+            }else{
+                setIsFavorite(false)
             }
         })
     }
