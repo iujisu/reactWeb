@@ -135,7 +135,7 @@ const MainPanel = () => {
         })
     }
 
-    const userPostsCount = (messages) => {
+    const userPostsCount = (messages) => { //채팅방 내의 메시지 카운트
         const userPosts = messages.reduce((acc, message) => {
             if (message.user.name in acc) {
                 acc[message.user.name].count += 1;

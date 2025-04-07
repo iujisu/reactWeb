@@ -9,13 +9,13 @@ import TopPanel from '../TopPanel/TopPanel';
 
 function ChatPage() {
     return (
-        <div class="wrap">
-            <div class="header">
+        <div className="wrap">
+            <div className="header">
                 <TopPanel />
             </div> 
-            <div class="content">
-                <div class="aside"> <SidePanel /></div>
-                <div class="main"><MainPanel /></div>
+            <div className="content">
+                <div className="aside"> <SidePanel /></div>
+                <div className="main"><MainPanel /></div>
             </div>
         </div>
     )

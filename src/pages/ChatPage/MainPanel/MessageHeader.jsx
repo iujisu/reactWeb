@@ -152,9 +152,9 @@ function MessageHeader({ handleSearchChange }) {
                 </Col>
                 <Col>
                     <Accordion>
-                        <Accordion.Item eventKey="0">
+                        <Accordion.Item eventKey="1">
                             <Accordion.Header>Posts Count</Accordion.Header>
-                            <Accordion.Collapse eventKey="0">
+                            <Accordion.Collapse eventKey="1">
                                 <Accordion.Body>
                                     {userPosts && renderUserPosts(userPosts)}
                                 </Accordion.Body>

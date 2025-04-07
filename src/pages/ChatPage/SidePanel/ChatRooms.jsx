@@ -102,7 +102,8 @@ const ChatRooms = () => {
             <li
                 key={room.id}
                 style={{
-                    backgroundColor: room.id === activeChatRoomId && "#ffffff45"
+                    backgroundColor: room.id === activeChatRoomId && "#ffffff45",
+                    cursor: 'pointer'
                 }}
                 onClick={() => changeChatRoom(room)}
             >

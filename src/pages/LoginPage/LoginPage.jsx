@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-
+import  connection  from '../../assets/connection.png';
+import { Image } from 'react-bootstrap';
 function LoginPage() {
     const auth = getAuth();
 
@@ -29,7 +30,7 @@ function LoginPage() {
     return (
         <div className="auth-wrapper">
             <div style={{ textAlign: 'center' }}>
-                <h3>Login</h3>
+            <Image src={connection} alt="connection" />
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <label>Email</label>

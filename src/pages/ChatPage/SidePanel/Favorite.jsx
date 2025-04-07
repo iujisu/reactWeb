@@ -60,7 +60,8 @@ const Favorite = () => {
                 key={chatRoom.id}
                 onClick={() => changeChatRoom(chatRoom)}
                 style={{
-                    backgroundColor: chatRoom.id === activeChatRoomId && "#ffffff45"
+                    backgroundColor: chatRoom.id === activeChatRoomId && "#ffffff45",
+                    cursor: 'pointer'
                 }}
             >
                 # {chatRoom.name}
