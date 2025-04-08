@@ -21,7 +21,7 @@ function MessageForm() {
     const { currentUser } = useSelector(state => state.user)
     const { isPrivateChatRoom } = useSelector(state => state.chatRoom);
 
-    const handleChange = (event) => {
+    const handleChange = (event) => {//상태방 입력중일때
         setContent(event.target.value);
 
         if (event.target.value) {

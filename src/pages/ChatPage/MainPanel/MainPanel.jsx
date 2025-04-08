@@ -19,7 +19,7 @@ const MainPanel = () => {
     const [searchTerm, setSearchTerm] = useState(""); //메시지검색
     const [searchResults, setSearchResults] = useState([]);//메시지검색
     const [searchLoading, setSearchLoading] = useState(false);//메시지검색
-    const [typingUsers, setTypingUsers] = useState([]);
+    const [typingUsers, setTypingUsers] = useState([]);//타이핑 유저
     const [listenerLists, setListenerLists] = useState([]);
 
     const { currentUser } = useSelector(state => state.user);
@@ -29,7 +29,7 @@ const MainPanel = () => {
     useEffect(() => {
         if (currentChatRoom.id) {
             addMessagesListeners(currentChatRoom.id)
-            addTypingListeners(currentChatRoom.id)
+            addTypingListeners(currentChatRoom.id)//메시지 입력중 정보조회
         }
 
         return () => {
