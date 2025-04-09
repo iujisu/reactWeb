@@ -39,7 +39,7 @@ function LoginPage() {
                     type="email"
                     {...register("email", { required: true, pattern: /^\S+@\S+$/i })}
                 />
-                {errors.email && <p>This email field is required</p>}
+                {errors.email && <p style={{ color: 'red' }}>This email field is required</p>}
 
                 <label>Password</label>
                 <input
@@ -47,8 +47,8 @@ function LoginPage() {
                     type="password"
                     {...register("password", { required: true, minLength: 6 })}
                 />
-                {errors.password && errors.password.type === "required" && <p>This password field is required</p>}
-                {errors.password && errors.password.type === "minLength" && <p>Password must have at least 6 characters</p>}
+                {errors.password && errors.password.type === "required" && <p style={{ color: 'red' }}>This password field is required</p>}
+                {errors.password && errors.password.type === "minLength" && <p style={{ color: 'red' }}>Password must have at least 6 characters</p>}
 
                 {errorFromSubmit &&
                     <p>{errorFromSubmit}</p>

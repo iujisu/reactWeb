@@ -180,7 +180,7 @@ function MessageForm() {
                             style={{ width: '100%', fontSize: 20, fontWeight: 'bold' }}
                             disabled={loading ? true : false}
                         >
-                            보내기
+                            SEND
                         </button>
                     </div>
                     <div style={{ flexGrow: 1 }}>
@@ -191,7 +191,7 @@ function MessageForm() {
                             style={{ width: '100%', fontSize: 20, fontWeight: 'bold' }}
                             disabled={loading ? true : false}
                         >
-                            이미지
+                            IMAGE
                         </button>
                     </div>
                 </div>
